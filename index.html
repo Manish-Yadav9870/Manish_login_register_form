@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form_container{
+border: 1px solid red;
+text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="form_container">
+    Email: <input type="text" id="email"> <br><br>
+    Password: <input type="password" id="password"> <br><br>
+    <button id="btn">Log In</button>
+    <p id="msg"></p>
+    <span id="logo"></span>
+    <br>
+    <a href="http://127.0.0.1:5500/Manish_login_register_form/mregisterpage.html">Not Register Please Register Here</a></div>
+
+</body>
+<script>
+    let btn = document.getElementById("btn");
+    // let arr = [
+    //     {email: "abc@gmail.com", password: "123456"},
+    //     {email: "xyz@gmail.com", password: "1234567"}
+    // ];
+    let arr = JSON.parse(localStorage.getItem("user")) || [];
+       function loginUser(){
+        let userdetails={
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+        }
+        let value=arr.find((user)=>
+        user.email===userdetails.email && user.password===userdetails.password
+    );
+    if(value){
+msg.innerHTML="";
+let loggedInEmail=localStorage.setItem("loggedInEmail",userdetails.email)
+window.location.href="mainweb.html";
+
+msg.style.color="green";
+       } else{
+        msg.innerHTML="Login Failed";
+        msg.style.color="red";
+       }
+    }
+    btn.addEventListener("click",()=>{
+        loginUser();
+    });
+</script>
+
+</html>

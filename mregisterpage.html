@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form">
+        Name: <input type="text" id="name"><br><br>
+        email:<input type="email" id="email"><br><br>
+        Mobile No:<input type="text" id="mobile"> <br><br>
+        Create Password:<input type="password" id="password"><br><br>
+        <button id="btn">Submit</button>
+    </form>
+
+</body>
+<script>
+    let arr=[]
+    let form=document.getElementById("form")
+    let name=document.getElementById("name")
+    let email=document.getElementById("email")
+    let mobile=document.getElementById("mobile")
+    let password=document.getElementById("password")
+    let btn=document.getElementById("btn")
+    btn.addEventListener("click",(e) =>{
+        e.preventDefault()
+        let obj={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            mobile:document.getElementById("mobile").value,
+            password:document.getElementById("password").value
+        }
+        arr.push(obj)
+        localStorage.setItem("user",JSON.stringify(arr))
+        alert("Register Sucessful")
+        form.reset();
+    }
+    );
+</script>
+<br>
+<a href="http://127.0.0.1:5500/Manish_login_register_form/index.html">Already Register Please Login Here</a>
+</html>

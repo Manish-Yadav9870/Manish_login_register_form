@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>Welcome to Home</div>
+<nav>
+    <div class="nav-item">Logo</div>
+    <div class="nav-item">Navlink</div>
+    <div id="usercridential">
+        <div id="useremail" class="nav-item">user</div>
+        <button id="userlog" class="nav-item"></button>
+    </div>
+</nav>
+
+<script>
+    let loggedInEmail=localStorage.getItem("loggedInEmail")||[];
+    let btn=document.getElementById("userlog");
+    btn.style.display="none";
+
+    if (loggedInEmail){
+        let users=JSON.parse(localStorage.getItem("user"))||[];
+        let user=users.find((user)=>user.email===loggedInEmail);
+        if(user){
+            document.getElementById("useremail").innerText=user.name;
+            btn.innerText="Logout";
+            btn.style.display="block";
+        }
+    }else{
+        window.location.href="index.html";
+    }
+    function removekeyfromlocalstorage(){
+        window.location.href="index.html";
+    }
+    btn.addEventListener("click",removekeyfromlocalstorage);
+</script>
+</body>
+
+</html>
