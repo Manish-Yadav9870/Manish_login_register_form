@@ -5,21 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #form_container{
-border: 1px solid red;
-text-align: center;
+        #super_container{
+            /* border: 1px solid blue; */
+            width: 88%;
+            height: 95vh;
+            margin: auto;
+            display: grid;
+            place-items: center;
+            background-image:
+    linear-gradient(
+      rgb(17, 144, 248), #f006c9,rgb(23, 23, 24)
+    );
+    border-radius: 7px;
         }
+        #form_container{
+/* border: 1px solid red; */
+width: 25%;
+height: 50vh;
+display: grid;
+place-items: center;
+background-color: white;
+border-radius: 10px;
+margin-top: 100px;
+        }
+        #h1_container{
+            /* border: 1px solid red; */
+            text-align: center;
+            width: 60%;
+        }
+        #h1_container h1{
+            color:black;
+        }
+        hr{
+            width: 99%;
+        }
+#email{
+    /* border: 1px solid rgb(231, 15, 15); */
+    width: 95%;
+    padding: 5px;
+    /* border-radius: 10px; */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin: auto;
+    text-align: center;
+}
+#email:focus{
+      outline: none;
+      border-color: #ccc;}
+#password{
+    /* border: 1px solid rgb(216, 10, 10); */
+    width: 95%;
+    padding: 5px;
+    /* border-radius: 10px; */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin: auto;
+    text-align: center;
+}
+#password:focus{
+      outline: none;
+      border-color: #ccc;}
+#btn{
+    border: 1px solid black;
+    width: 98%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    /* text-align: center; */
+    font-size: large;
+    transition: all 1s ease-in-out;
+    
+   
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: 
+    rgb(206,44,209);
+}
+label{
+    color:black;
+    font-size: large;
+}
+#p_container{
+    color: black;
+}
+#email_container{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    width: 85%;
+    /* display:flex ; */
+    margin: auto;
+}
+#password_container{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    width: 85%;
+    /* display: flex; */
+    margin: auto;
+}
+#button_container{
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 85%;
+}
+#last_container{
+    /* border: 1px solid red; */
+    width: 85%;
+    text-align: center;
+}
+#forget_container {
+    /* border: 1px solid red; */
+    width: 85%;
+}
+#forget_container p{
+    /* border: 1px solid red; */
+    width: 34%;
+}
+#forget_container p:hover{
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
+    <div id="super_container">
     <div id="form_container">
-    Email: <input type="text" id="email"> <br><br>
-    Password: <input type="password" id="password"> <br><br>
-    <button id="btn">Log In</button>
-    <p id="msg"></p>
-    <span id="logo"></span>
-    <br>
-    <a href="http://127.0.0.1:5500/Manish_login_register_form/mregisterpage.html">Not Register Please Register Here</a></div>
+        <div id="h1_container"><h1>Sign In</h1></div><hr>
+ <div id="email_container"> <label>Your Email:</label>  <input type="text" id="email" placeholder="Enter Your Email"> </div> 
+  <div id="password_container"> <label>Password:</label>  <input type="password" id="password" placeholder="Enter Your Password"></div>
+  <div id="forget_container"><p>Forget Password?</p></div>
+   <div id="button_container"> <button id="btn">Sign In</button></div>
+   
+   <div id="last_container"> <p id="p_container">Not a Member? <span><a href="http://127.0.0.1:5500/Manish_login_register_form/mregisterpage.html">Sign Up Here</a></span></p></div>
+</div>
+   <p id="msg"></p>
+   <span id="logo"></span>
+</div>
 
 </body>
 <script>
@@ -34,21 +156,28 @@ text-align: center;
             email:document.getElementById("email").value,
             password:document.getElementById("password").value
         }
+        if (userdetails.email==""||userdetails.password==""){
+        alert("Please fill all the fields");
+        return
+    }
         let value=arr.find((user)=>
         user.email===userdetails.email && user.password===userdetails.password
     );
     if(value){
 msg.innerHTML="";
+alert("Log In Sucessful")
 let loggedInEmail=localStorage.setItem("loggedInEmail",userdetails.email)
 window.location.href="mainweb.html";
 
 msg.style.color="green";
        } else{
-        msg.innerHTML="Login Failed";
+        msg.innerHTML="";
+        alert("Login Failed");
         msg.style.color="red";
        }
     }
     btn.addEventListener("click",()=>{
+        // e.preventDefault();
         loginUser();
     });
 </script>

@@ -1,21 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #super_container{
+            border: 1px solid red;
+            width: 90%;
+            height: 95vh;
+            margin: auto;
+        }
+        #logo_container{
+            /* border: 1px solid blue; */
+            width: 10%;
+        }
+        #logo_container img{
+            width: 98%;
+            height: 5vh;
+        }
+#nav{
+border: 1px solid black;
+width: 95%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: rgb(41,35,35)
+}
+       
+        #nav_links_container{
+            /* border: 1px solid green; */
+            width: 60%;
+        
+        }
+        #nav_links_container ul{
+display: flex;
+justify-content: space-around;
+list-style: none;
+color: white;
+        }
+        #usercridential{
+            /* border: 1px solid rgb(247, 106, 13); */
+            display: flex;
+            justify-content: space-around;
+            width: 15%;
+            color: white;
+        }
+        #userlog{
+            /* border: 1px solid rgb(247, 106, 13); */
+            padding: 2px;
+            width: 30%;
+            border-radius: 5px;
+            background-color: red;
+        }
+        #userlog:hover{
+            background-color: rgb(247, 106, 13);
+        }
+    </style>
 </head>
-<body>
-<div>Welcome to Home</div>
-<nav>
-    <div class="nav-item">Logo</div>
-    <div class="nav-item">Navlink</div>
+<body><div id="super_container">
+<nav id="nav">
+    <div id="logo_container"><img src="https://w0.peakpx.com/wallpaper/842/33/HD-wallpaper-spiderman-simple-black-hero-marvel-red-spider.jpg" alt="logo"></div>
+    <div id="nav_links_container">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Products</li>
+        </ul>
+    </div>
     <div id="usercridential">
-        <div id="useremail" class="nav-item">user</div>
-        <button id="userlog" class="nav-item"></button>
+        <div id="useremail"></div>
+        <button id="userlog"></button>
     </div>
 </nav>
-
+</div>
 <script>
     let loggedInEmail=localStorage.getItem("loggedInEmail")||[];
     let btn=document.getElementById("userlog");
@@ -26,7 +89,9 @@
         let user=users.find((user)=>user.email===loggedInEmail);
         if(user){
             document.getElementById("useremail").innerText=user.name;
+        
             btn.innerText="Logout";
+           
             btn.style.display="block";
         }
     }else{
@@ -34,6 +99,7 @@
     }
     function removekeyfromlocalstorage(){
         window.location.href="index.html";
+        alert("Log Out Sucessful");
     }
     btn.addEventListener("click",removekeyfromlocalstorage);
 </script>
