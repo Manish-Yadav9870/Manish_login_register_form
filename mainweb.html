@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-
-    </style>
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <style>
         #super_container{
             border: 1px solid red;
             width: 90%;
-            height: 95vh;
+            /* height:150vh; */
             margin: auto;
+            /* background-image: linear-gradient( 
+               rgb(23, 23, 24), rgb(141,116,74),rgb(23, 23, 24) */
+    
         }
         #logo_container{
-            /* border: 1px solid blue; */
+            border: 1px solid red;
+            border-radius: 50px;
             width: 10%;
+            overflow: hidden;
+            padding: 5px;
         }
         #logo_container img{
+            border-radius: 50px;
             width: 98%;
-            height: 5vh;
+            
+            height: 6vh;
+            transition: all 1s ease-in-out;
+        }
+        #logo_container img:hover{
+cursor: pointer;
+transform: scale(1.1);
         }
 #nav{
 border: 1px solid black;
-width: 95%;
+width: 98%;
 margin: auto;
+padding: 10px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: rgb(41,35,35)
+background-color:rgb(1,1,1)
 }
-       
+    #menu_container{
+        display: none;
+    }   
         #nav_links_container{
             /* border: 1px solid green; */
             width: 60%;
@@ -41,7 +56,16 @@ background-color: rgb(41,35,35)
 display: flex;
 justify-content: space-around;
 list-style: none;
-color: white;
+color:rgb(141,116,74);
+font-size: larger;
+
+        }
+         #nav_links_container ul li{
+            transition: all 1s ease-in-out;
+         }
+        #nav_links_container ul li:hover{
+            cursor: pointer;
+            color: red;
         }
         #usercridential{
             /* border: 1px solid rgb(247, 106, 13); */
@@ -49,22 +73,136 @@ color: white;
             justify-content: space-around;
             width: 15%;
             color: white;
+            font-size: larger;
         }
         #userlog{
             /* border: 1px solid rgb(247, 106, 13); */
             padding: 2px;
             width: 30%;
             border-radius: 5px;
-            background-color: red;
+            background-color: rgb(141,116,74);
+            transition: all 1s ease-in-out;
         }
         #userlog:hover{
-            background-color: rgb(247, 106, 13);
+            background-color: red;
+            cursor: pointer;
         }
+        #hero_container{
+            border: 1px solid red;
+            height:25vh;
+            width: 98%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            margin: auto;
+            background-image: url(https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        }
+      #center_container{
+        border: 1px solid red;
+        font-size: 50px;
+      }
+      #containerApi {
+   
+   width: 90%;
+  
+   margin: 20px auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap:10px;
+}
+#containerApi div:nth-child(odd){
+   background-color: #ddf1f3ec;
+   padding: 10px;
+   border: 1px solid #ddd;
+   text-align: center;
+   /* overflow: hidden; */
+   border-radius: 45px 10px 40px 10px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 
+   0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+   transition: 0.6s ease-in-out;
+}
+#containerApi div:nth-child(even){
+ background-color: #ebeee7ec;
+ padding: 10px;
+ border: 1px solid #ddd;
+ text-align: center;
+ /* overflow: hidden; */
+ border-radius: 45px 10px 40px 10px;
+ box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 
+ 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+ transition: 0.6s ease-in-out;
+}
+img{
+   width: 40%;
+   height: 22vh;
+   border-radius: 10px;
+   transition: ease-in-out 3s;
+}
+
+#containerApi div:hover{
+   background-color: rgba(225, 240, 202, 0.742);
+   transform: scale(1.025);
+   cursor: pointer;
+ 
+}
+#containerApi div{
+    background-color: #171818ec;
+}
+#form_container{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+#image_container{
+    border: 1px solid red;
+}
+#image_container img{
+    border: 1px solid rgb(14, 13, 13);
+}
+#contant_us_form{
+    border: 1px solid red;
+    /* display: grid; */
+}
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.footer-about, .footer-links, .footer-contact {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h3 {
+  margin-top: 0;
+}
     </style>
 </head>
 <body><div id="super_container">
 <nav id="nav">
-    <div id="logo_container"><img src="https://w0.peakpx.com/wallpaper/842/33/HD-wallpaper-spiderman-simple-black-hero-marvel-red-spider.jpg" alt="logo"></div>
+    <div id="menu_container">
+        <span>&#9776;</span>
+    </div>
+    <div id="logo_container"><img src="https://www.financialexpress.com/wp-content/uploads/2018/04/taj-1.jpg" alt="logo"></div>
     <div id="nav_links_container">
         <ul>
             <li>Home</li>
@@ -75,9 +213,54 @@ color: white;
     </div>
     <div id="usercridential">
         <div id="useremail"></div>
+        
         <button id="userlog"></button>
     </div>
 </nav>
+<div id="hero_container">
+    <div id="center_container">
+        <p>WelCome In Taj <p>Direct <span>दिल से.....</span></p></p>
+    </div>
+</div>
+<div id="ApiData">
+    <div id="h1_container"><h1>Our Product's</h1></div>
+    <div id="containerApi">
+  </div>
+  </div>
+  <div id="form_container">
+    <div id="image_container">
+        <img src="./pexels-pixabay-461049.jpg" alt="">
+    </div>
+    <div id="contant_us_form">
+         <div id="email_container"> <label>Your Name:</label>  <input type="text" id="email" placeholder="Enter Your Name"> </div> 
+          <div id="password_container"> <label>Mobile Number:</label>  <input type="text" id="password" placeholder="Enter Your Number"></div>
+           <div id="button_container"> <button id="btn">Sign In</button></div>
+       
+  </div>
+</div>
+    <footer class="site-footer">
+        <div class="container">
+          <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Our mission is to deliver exceptional web experiences.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: info@example.com</p>
+            <p>Phone: +123 456 7890</p>
+          </div>
+       
+      </footer>
+
 </div>
 <script>
     let loggedInEmail=localStorage.getItem("loggedInEmail")||[];
@@ -102,6 +285,49 @@ color: white;
         alert("Log Out Sucessful");
     }
     btn.addEventListener("click",removekeyfromlocalstorage);
+    
+
+    let cont=document.getElementById("containerApi")
+   
+   let arr= [];
+   async function getValuefromApi(){
+    try{
+    let response= await axios.get("https://fakestoreapi.com/products");
+    console.log(response.data);
+    arr=response.data
+  
+    displayData();
+   }
+   catch(error){
+    console.log(error)
+   }
+}
+getValuefromApi()
+
+function displayData(){
+    cont.innerHTML="";
+    arr.map((element) => {
+        let card=document.createElement("div")
+        let image= document.createElement("img")
+        image.src=element.image;
+        let title=document.createElement("h3")
+        title.innerText=element.title;
+        let price=document.createElement("p")
+        price.innerText=`₹${element.price}`;
+        let description=document.createElement("p");
+        description.innerText=element.description;
+        let rate= document.createElement("h3")
+        rate.innerText = `Rating: ${element.rating.rate}`;
+        let button_cont=document.createElement("div");
+        let addtocart=document.createElement("button");
+        addtocart.innerText="add to cart";
+        let favourite=document.createElement("button");
+        favourite.innerText="Wishlist"
+        button_cont.append(addtocart, favourite)
+        card.append(image,title,price,description,rate,button_cont)
+        cont.append(card)
+});
+}
 </script>
 </body>
 
