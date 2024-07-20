@@ -12,9 +12,10 @@
             width: 90%;
             /* height:150vh; */
             margin: auto;
-            /* background-image: linear-gradient( 
-               rgb(23, 23, 24), rgb(141,116,74),rgb(23, 23, 24) */
-    
+            background-image:
+    linear-gradient(
+      rgb(248, 17, 52), #f006c9,rgb(23, 23, 24)
+    );
         }
         #logo_container{
             border: 1px solid red;
@@ -106,29 +107,42 @@ font-size: larger;
         #hero_container{
             border: 1px solid red;
             height:25vh;
-            width: 98%;
+            width: 99%;
             display: grid;
+            border-radius: 70px;
             place-items: center;
             overflow: hidden;
             margin: auto;
-            background-image: url(https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-image:
+    linear-gradient(
+      rgb(239, 37, 10), #484748,rgb(23, 23, 24)
+    );
         }
       #center_container{
+        /* border: 1px solid red; */
+        /* font-size: 50px; */
+        color: white;
+        font-family:  cursive;
+        text-align: center;
+        
+      }
+      #h1_container{
         border: 1px solid red;
-        font-size: 50px;
+        text-align: center;
       }
       #containerApi {
    
-   width: 90%;
+   width: 98%;
   
    margin: 20px auto;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   gap:10px;
+   gap:20px;
 }
 #containerApi div:nth-child(odd){
-   background-color: #ddf1f3ec;
+   background-color: #1f2020ec;
    padding: 10px;
+   width: 89%;
    border: 1px solid #ddd;
    text-align: center;
    /* overflow: hidden; */
@@ -140,6 +154,7 @@ font-size: larger;
 #containerApi div:nth-child(even){
  background-color: #ebeee7ec;
  padding: 10px;
+ width: 89%;
  border: 1px solid #ddd;
  text-align: center;
  /* overflow: hidden; */
@@ -235,7 +250,9 @@ h3 {
 </nav>
 <div id="hero_container">
     <div id="center_container">
-        <p>WelCome In Taj <p>Direct <span>दिल से.....</span></p></p>
+        <h1>Hii EveryOne <span>	&#128512;</span> </h1>
+        <h3>MySelf Manish Yadav <span>&#x1F46E</span></h3>
+        <h3>Thanks For Visiting <span> &#129309</span></h3>
     </div>
 </div>
 <div id="ApiData">
@@ -335,6 +352,7 @@ function displayData(){
         let rate= document.createElement("h3")
         rate.innerText = `Rating: ${element.rating.rate}`;
         let button_cont=document.createElement("div");
+        button_cont.id="button_cont"
         let addtocart=document.createElement("button");
         addtocart.innerText="add to cart";
         let favourite=document.createElement("button");
