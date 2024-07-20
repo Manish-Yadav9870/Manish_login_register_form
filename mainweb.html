@@ -36,6 +36,9 @@ transform: scale(1.1);
         }
 #nav{
 border: 1px solid black;
+z-index: 1;
+position: sticky;
+top: 0;
 width: 98%;
 margin: auto;
 padding: 10px;
@@ -69,23 +72,36 @@ font-size: larger;
         }
         #usercridential{
             /* border: 1px solid rgb(247, 106, 13); */
+            padding: 10px;
             display: flex;
             justify-content: space-around;
-            width: 15%;
+            width: 20%;
             color: white;
             font-size: larger;
         }
+        #useremail{
+            /* border: 1px solid red; */
+            transition: all 1s ease-in-out;
+        }
+        #useremail:hover{
+           color:rgb(141,116,74) ;
+           cursor: pointer;
+         
+
+        }
         #userlog{
-            /* border: 1px solid rgb(247, 106, 13); */
-            padding: 2px;
-            width: 30%;
-            border-radius: 5px;
+            border: 2px solid red;
+            padding: 5px;
+            width: 25%;
+            font-weight: bold;
+            border-radius: 10px;
             background-color: rgb(141,116,74);
             transition: all 1s ease-in-out;
         }
         #userlog:hover{
             background-color: red;
             cursor: pointer;
+            border: 2px solid green;
         }
         #hero_container{
             border: 1px solid red;
