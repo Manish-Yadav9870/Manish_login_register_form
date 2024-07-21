@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <style>
         #super_container{
@@ -41,6 +42,7 @@ z-index: 1;
 position: sticky;
 top: 0;
 width: 98%;
+border-radius: 12px;
 margin: auto;
 padding: 10px;
 display: flex;
@@ -109,13 +111,13 @@ font-size: larger;
             height:25vh;
             width: 99%;
             display: grid;
-            border-radius: 70px;
+            border-radius: 12px;
             place-items: center;
             overflow: hidden;
             margin: auto;
             background-image:
     linear-gradient(
-      rgb(239, 37, 10), #484748,rgb(23, 23, 24)
+      rgb(239, 37, 10),red
     );
         }
       #center_container{
@@ -140,7 +142,7 @@ font-size: larger;
    gap:20px;
 }
 #containerApi div:nth-child(odd){
-   background-color: #1f2020ec;
+   background-color: #e5eeeeec;
    padding: 10px;
    width: 89%;
    border: 1px solid #ddd;
@@ -169,59 +171,296 @@ img{
    border-radius: 10px;
    transition: ease-in-out 3s;
 }
-
+#card_cont{
+    border: 1px solid rgb(15, 14, 14);
+    text-align: center;
+    background-color: #f006c9;
+}
 #containerApi div:hover{
    background-color: rgba(225, 240, 202, 0.742);
    transform: scale(1.025);
    cursor: pointer;
  
 }
-#containerApi div{
-    background-color: #171818ec;
+
+#containerApi div #button_cont{
+    border: 1px solid red;
+    /* text-align: center; */
+    /* width: 70%; */
+    display: flex;
+    justify-content: space-around;
+}
+#button_cont button{
+    /* border:  1px solid red; */
+    border-radius: 10px;
+    background-color: #e5eeeeec;
 }
 #form_container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    height: 52vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding-bottom: 15px;
 }
 #image_container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    height: 52vh;
+    width: 48%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
 }
 #image_container img{
-    border: 1px solid rgb(14, 13, 13);
+    /* border: 1px solid rgb(14, 212, 27); */
+    height: 52vh;
+    width: 100%;
+}
+#image_container img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 #contant_us_form{
-    border: 1px solid red;
-    /* display: grid; */
+    /* border: 1px solid red; */
+    height: 52vh;
+    width: 48%;
+    display: grid;
+    place-items: center;
 }
-.site-footer {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
+#new_form{
+    /* border: 1px solid red; */
+    width: 98%;
+height: 52vh;
+display: grid;
+place-items: center;
+background-color: rgb(216,222,240);
+border-radius: 10px;
+}
+#email{
+    /* border: 1px solid rgb(231, 15, 15); */
+    width: 95%;
+    padding: 5px;
+    /* border-radius: 10px; */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin: auto;
+    text-align: center;
+}
+#email:focus{
+      outline: none;
+      border-color: #ccc;}
+#password{
+    /* border: 1px solid rgb(216, 10, 10); */
+    width: 95%;
+    padding: 5px;
+    /* border-radius: 10px; */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin: auto;
+    text-align: center;
+}
+#password:focus{
+      outline: none;
+      border-color: #ccc;}
+#btn{
+    border: 1px solid black;
+    width: 98%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    /* text-align: center; */
+    font-size: large;
+    transition: all 1s ease-in-out;
+    
+   
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: 
+    rgb(206,44,209);
+}
+label{
+    color:black;
+    font-size: large;
+}
+#password_container{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    width: 85%;
+    /* display: flex; */
+    margin: auto;
+}
+#button_container{
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 85%;
+}
+#email_container{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    width: 85%;
+    /* display:flex ; */
+    margin: auto;
+}
+#contact_us_h1{
+    text-align: center;
 }
 
-.container {
+.footer {
+    /* width: 100%; */
+    margin: auto;
+    text-align: center;
+    /* border: 1px solid white; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* max-width: 1280px; */
+  width: 98%;
+  /* background: #10182F; */
+  border-radius: 6px;
+}
+.footer .footer-row {
+    /* border: 1px solid white; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 15px;
+  gap: 3.5rem;
+  /* padding: 60px; */
 }
-
-.footer-about, .footer-links, .footer-contact {
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 20px;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li a {
+.footer-row .footer-col h4 {
+    /* border:  1px solid white; */
   color: #fff;
-  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
+.footer-row{
+    /* border: 1px solid white; */
+}
+.footer-col{
+    /* border: 1px solid white; */
+    /* margin: auto; */
+}
+ul.links{
+    text-align: center;
+    padding: 0px;
+    /* border: 1px solid rgb(19, 233, 15); */
+    margin: auto;
+}
+.footer-col .links {
+    width: 70;
+    text-align: center;
+    /* border:  1px solid white; */
+  margin-top: 20px;
+}
+.footer-col .links  {
+    /* border:  1px solid white; */
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer-col .links li a {
+    text-align: center;
+    /* border:  1px solid white; */
+  text-decoration: none;
+  color: #bfbfbf;
+}
+.footer-col .links li a:hover {
+  color: #fff;
+}
+.footer-col p {
+  /* margin: 20px 0; */
+  color: #bfbfbf;
+  max-width: 300px;
+}
+.footer-col form {
+    /* border:  1px solid white; */
+  display: flex;
+  gap: 5px;
+}
+.footer-col input {
+    border:  1px solid white;
+  height: 40px;
+  border-radius: 6px;
+  background: none;
+  /* width:1 %; */
+  outline: none;
+  border: 1px solid #7489C6 ;
+  caret-color: #fff;
+  color: #fff;
+  
+  /* padding-left: -20px; */
+}
+input{
+    /* border:  1px solid rgb(242, 18, 18); */
+    padding: 0px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin: auto;
+    text-align: center;
+}
+/* .icons{
+text-align: center;
+padding: 0px;
+margin: 0px;
+} */
+/* .footer-col input::placeholder {
+  color: #ccc;
+} */
+ .footer-col form button {
+    /* border:  1px solid white; */
+  background: #fff;
+  outline: none;
+  border: px solid black;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 1s ease-in-out;
+}
+.footer-col form button:hover {
+  background: rgb(206,44,209);
+}
+.footer-col .icons {
+    /* border:  1px solid white; */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  gap: 10px;
+  cursor: pointer;
+}
+.footer-col .icons i {
+    /* border:  1px solid white; */
+  color: #afb6c7;
+}
+.footer-col .icons i:hover  {
+  color: #fff;
+}
+  /* .footer {
+    /* position: relative; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* transform: none; */
+    /* width: 100%; */
+    /* border-radius: 0; */
+   
+  .footer .footer-row {
+    padding: 20px;
+    gap: 1rem;
+  }
+  .footer-col form {
+    display: block;
+  }
+  .footer-col form :where(input, button) {
+    width: 100%;
+  }
+  .footer-col form button {
+    margin: 10px 0 0 0;
+  }
 
 h3 {
   margin-top: 0;
@@ -260,39 +499,74 @@ h3 {
     <div id="containerApi">
   </div>
   </div>
+  <h1 id="contact_us_h1">Contact Us</h1>
   <div id="form_container">
+ 
     <div id="image_container">
-        <img src="./pexels-pixabay-461049.jpg" alt="">
+        <img src="https://media.istockphoto.com/id/1468757785/photo/human-resources-and-management-concept-employee-must-complete-the-online-survey-form-marked.jpg?s=612x612&w=0&k=20&c=pw8CEktSVEQUF1NXxNRN2vplQ2ZKvRmuSGJqyktRd54=" alt="">
     </div>
     <div id="contant_us_form">
-         <div id="email_container"> <label>Your Name:</label>  <input type="text" id="email" placeholder="Enter Your Name"> </div> 
-          <div id="password_container"> <label>Mobile Number:</label>  <input type="text" id="password" placeholder="Enter Your Number"></div>
-           <div id="button_container"> <button id="btn">Sign In</button></div>
-       
+        <div id="new_form">
+         <div id="email_container"> <label>Your Product Name:</label>  <input type="text" id="email" placeholder="Enter Product Name"> </div> 
+          <div id="password_container"> <label>Message To Us:</label>  <input type="text" id="password" placeholder="Enter Your Message"></div>
+           <div id="button_container"> <button id="btn">Submit</button></div>
+        </div>
   </div>
 </div>
-    <footer class="site-footer">
-        <div class="container">
-          <div class="footer-about">
-            <h3>About Us</h3>
-            <p>Our mission is to deliver exceptional web experiences.</p>
-          </div>
-          <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@example.com</p>
-            <p>Phone: +123 456 7890</p>
-          </div>
-       
-      </footer>
+<section class="footer">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul class="links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Compressions</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Collection</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="links">
+          <li><a href="#">Free Designs</a></li>
+          <li><a href="#">Latest Designs</a></li>
+          <li><a href="#">Themes</a></li>
+          <li><a href="#">Popular Designs</a></li>
+          <li><a href="#">Art Skills</a></li>
+          <li><a href="#">New Uploads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="links">
+          <li><a href="#">Customer Agreement</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">GDPR</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Media Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose
+          of news, updates, helpful tips, and
+          exclusive offers.
+        </p>
+        <form action="#">
+          <input type="text" placeholder="enter Your email" required>
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>
 <script>
@@ -341,6 +615,7 @@ function displayData(){
     cont.innerHTML="";
     arr.map((element) => {
         let card=document.createElement("div")
+        card.id="card_cont"
         let image= document.createElement("img")
         image.src=element.image;
         let title=document.createElement("h3")
